@@ -1,0 +1,36 @@
+ <nav class="flex items-center justify-between flex-wrap bg-gray-600 p-2">
+     <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-orange-600 font-bold">
+         {{ .Site.Title }}
+     </a>
+     <div class="block sm:hidden text-white ">
+         <button id="nav-open" class="flex items-center  ">
+
+             {{partial "zondico.html" "menu"}}
+
+
+         </button>
+         <button id="nav-close" class="hidden flex items-center">
+             {{partial "zondico.html" "close"}}
+         </button>
+     </div>
+
+     <ul id="nav-menu"
+         class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
+
+         <li><a href="#" class="inline-block text-white hover:text-orange-600 sm:px-2 ">About</a>
+         </li>
+         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Services</a>
+         </li>
+         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Features</a>
+         </li>
+         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Blog</a></li>
+         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Contact</a>
+         </li>
+
+
+     </ul>
+
+
+
+
+ </nav>
