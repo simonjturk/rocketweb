@@ -21,14 +21,14 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "site/content/_index.md"
+      - file: "content/_index.md"
         label: "Home Page"
         name: "home"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: "Hero", name: hero, widget: object, fields: [
               {label: "Heading", name: "heading", widget: string},
-              {label: "Sub Heading", name: "text", widget: "text"},
+              {label: "Sub Heading", name: "sub_heading", widget: "text"},
               {label: "Paragraph", name: "paragraph", widget: "text"},
               {label: "Button", name: button, widget: object, fields: [
                 {label: "text", name: "text", widget: string},
