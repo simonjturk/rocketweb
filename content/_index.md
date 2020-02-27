@@ -1,15 +1,11 @@
 ---
-title   :   "RocketWeb"
-date : 2020-02-26T13:48:43+11:00
-draft: false
-
+title: RocketWeb
 hero:
-    heading : "Web done right"
-    sub_heading : "Fast.Secure.Responsive"
-    paragraph : "Some things are worth waiting for your website isn't one of them."
-
-    button:
-        text : "Learn more"
-        link : "https : //google.com"
+  button:
+    link: 'https : //google.com'
+    text: Learn more
+  heading: Web done right
+  paragraph: Some things are worth waiting for your website isn't one of them.
+  sub_heading: Fast.Secure.Responsive.Awesome
 ---
 
