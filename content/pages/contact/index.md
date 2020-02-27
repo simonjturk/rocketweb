@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 date: 2020-02-27T11:44:40+11:00
-draft: true
+draft: false
 menu:
   main:
     parent: 'pages'
