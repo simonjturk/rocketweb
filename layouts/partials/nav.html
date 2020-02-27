@@ -3,35 +3,16 @@
          {{ .Site.Title }}
      </a>
      <div class="block sm:hidden text-white ">
-         <button id="nav-open" class="flex items-center  ">
+         <button id="nav-open" aria-label="open main menu" class="flex items-center  ">
 
              {{partial "zondico.html" "menu"}}
 
 
          </button>
-         <button id="nav-close" class="hidden flex items-center">
+         <button id="nav-close" aria-label="close main menu" class="hidden flex items-center">
              {{partial "zondico.html" "close"}}
          </button>
      </div>
-
-     <ul id="nav-menu"
-         class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
-         <!--pages menu-->
-
-
-         {{ $section := where $.Site.RegularPages "Section" "pages"}}
-         {{ range   ($section.ByParam "menu.weight" ) }}
-         <li>
-             <a href="{{ .Permalink }}"
-                 class="inline-block text-white sm:px-2 hover:text-orange-600 ">{{ .Params.menu.title }}</a>
-         </li>
-         {{ end }}
-
-
-
-
-
-     </ul>
 
      <ul id="nav-menu"
          class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
