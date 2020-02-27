@@ -36,5 +36,25 @@ collections:
                 ]}
             ]}
 
-  
+  - name: 'pages'
+    label: 'Page'
+    folder: 'content/pages'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {label: "Hero", name: hero, widget: object, fields: [
+              {label: "Heading", name: "heading", widget: string},
+              {label: "Sub Heading", name: "sub_heading", widget: "text"},
+              {label: "Paragraph", name: "paragraph", widget: "text"},
+              {label: "Button", name: button, widget: object, fields: [
+                {label: "text", name: "text", widget: string},
+                {label: "link", name: "link", widget: string}
+                ]}
+            ]}
          
