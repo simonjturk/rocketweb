@@ -12,7 +12,7 @@ hero:
 menu:
   main:
     parent: pages
-    title: xx
+    title: Contact Us
     weight: 10
 ---
 
