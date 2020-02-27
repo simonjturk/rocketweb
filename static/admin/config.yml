@@ -56,7 +56,7 @@ collections:
                 {label: "text", name: "text", widget: string},
                 {label: "link", name: "link", widget: string}
                 ]}
-            ]},
+            ]}
       - {label: "Menu", name: "menu", widget: "object", fields: [
           {label: "main", name: "main", widget: "object", fields: [{
             {label: "Parent", name: "parent", widget: string},
