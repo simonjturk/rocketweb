@@ -1,15 +1,15 @@
 ---
-title: "Contact"
-date: 2020-02-27T11:44:40+11:00
-draft: false
+title: "About"
+date: 2020-02-27T16:03:11+11:00
+draft: true
 menu:
   main:
     parent: 'pages'
-    weight: 20
-    title: "Contact Us"
+    weight: 1
+    title: "About"
 
 hero:
-    heading : "Contact Us"
+    heading : "About"
     sub_heading : "Sub heading"
     paragraph : "Cool paragraph"
 

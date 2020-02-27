@@ -1,15 +1,15 @@
 ---
-Title: "About"
-date: 2020-02-27T10:23:26+11:00
-draft: false
+title: "Test"
+date: 2020-02-27T15:58:42+11:00
+draft: true
 menu:
   main:
     parent: 'pages'
-    weight: 20
-    title: "About"
+    weight: 1
+    title: "Test"
 
 hero:
-    heading : "Heading"
+    heading : "Test"
     sub_heading : "Sub heading"
     paragraph : "Cool paragraph"
 
