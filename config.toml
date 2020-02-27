@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://dreamy-colden-eaba8e.netlify.com/"
      languageCode = "en-us"
      title = "RocketWeb"
      disableKinds = ["taxonomy", "taxonomyTerm"]
