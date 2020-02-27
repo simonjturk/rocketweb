@@ -2,3 +2,5 @@ baseURL = "http://example.org/"
      languageCode = "en-us"
      title = "RocketWeb"
      disableKinds = ["taxonomy", "taxonomyTerm"]
+
+     sectionPagesMenu = "main"

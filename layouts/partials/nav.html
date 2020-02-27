@@ -16,21 +16,42 @@
 
      <ul id="nav-menu"
          class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
+         <!--pages menu-->
 
-         <li><a href="#" class="inline-block text-white hover:text-orange-600 sm:px-2 ">About</a>
+
+         {{ $section := where $.Site.RegularPages "Section" "pages"}}
+         {{ range   ($section.ByParam "menu.weight" ) }}
+         <li>
+             <a href="{{ .Permalink }}"
+                 class="inline-block text-white sm:px-2 hover:text-orange-600 ">{{ .Params.menu.title }}</a>
          </li>
-         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Services</a>
-         </li>
-         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Features</a>
-         </li>
-         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Blog</a></li>
-         <li><a href="#" class="inline-block text-white sm:px-2 hover:text-orange-600">Contact</a>
-         </li>
+         {{ end }}
+
+
+
 
 
      </ul>
 
+     <ul id="nav-menu"
+         class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
+         {{ $currentPage := . }}
+         {{ range .Site.Menus.main }}
+         {{ if and ( .HasChildren ) (eq .Name "Pages") }}
 
+
+         {{ range .Children }}
+         <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+             <a href="{{ .URL }}"
+                 class="inline-block text-white sm:px-2 hover:text-orange-600 {{ if $currentPage.IsMenuCurrent "main" . }}text-orange-600{{ end }} ">{{ .Page.Params.menu.main.title }}</a>
+         </li>
+         {{ end }}
+
+
+         {{ end }}
+         {{ end }}
+
+     </ul>
 
 
  </nav>
