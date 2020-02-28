@@ -3,6 +3,7 @@ languageCode = "en-us"
 languageLang = "en"
 title = "My new Victor-Hugo site"
 theme = "rocket-web-theme"
+menu = "main"
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
 # https://gohugo.io/getting-started/configuration/#toml-configuration
