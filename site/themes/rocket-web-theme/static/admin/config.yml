@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: static/img
+public_folder: /img
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'content/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+
+  - name: "specialPages"
+    label: "Special Pages"
+    files:
+      - file: "content/_index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Hero", name: hero, widget: object, fields: [
+              {label: "Heading", name: "heading", widget: string},
+              {label: "Sub Heading", name: "sub_heading", widget: "text"},
+              {label: "Paragraph", name: "paragraph", widget: "text"},
+              {label: "Button", name: button, widget: object, fields: [
+                {label: "text", name: "text", widget: string},
+                {label: "link", name: "link", widget: string}
+                ]}
+            ]}
+
+  - name: 'pages'
+    label: 'Page'
+    folder: 'content/pages'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' , required: false}
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - {label: "Hero", name: hero, widget: object,  required: false, fields: [
+              {label: "Heading", name: "heading", widget: string},
+              {label: "Sub Heading", name: "sub_heading", widget: "text"},
+              {label: "Paragraph", name: "paragraph",required: false, widget: "text"},
+              {label: "Button", name: button,required: false, widget: "object", fields: [
+                {label: "text", name: "text", widget: "string"},
+                {label: "link", name: "link", widget: "string"}
+                ]}
+            ]}
+      - {label: "Menu", name: "menu", widget: "object", fields: [
+          {label: "main", name: "main", widget: "object", fields: [
+            {label: "Parent", name: "parent", widget: "string"},
+            {label: "Order", name: "weight", widget: "number", min: 0, max: 100, step: 5 },
+            {label: "Title", name: "title", widget: "string"}
+          ]}
+      ]}
+         
