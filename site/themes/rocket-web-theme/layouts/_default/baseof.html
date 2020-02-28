@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{{- partial "head.html" . -}}
+
+<body>
+
+    <main>
+        {{ partial "nav.html" . }}
+        {{- block "main" . }}{{- end }}
+    </main>
+
+    <script>
+        //Javascript to toggle the nav-menu
+        document.getElementById('nav-open').onclick = function () {
+            document.getElementById("nav-menu").classList.toggle("hidden");
+            document.getElementById("nav-open").classList.toggle("hidden");
+            document.getElementById("nav-close").classList.toggle("hidden");
+        }
+        document.getElementById('nav-close').onclick = function () {
+            document.getElementById("nav-menu").classList.toggle("hidden");
+            document.getElementById("nav-close").classList.toggle("hidden");
+            document.getElementById("nav-open").classList.toggle("hidden");
+        }
+    </script>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    {{ $script := .Site.Data.webpack.main }}
+    {{ with $script.js }}
+    <script src="{{ relURL . }}"></script>
+    {{ end }}
+</body>
+
+</html>
