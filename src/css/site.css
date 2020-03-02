@@ -4,8 +4,16 @@
 
 .inline-svg {
     display: inline-block;
-    height: 1.15rem;
-    width: 1.15rem;
+    height: 100%;
+    width: 100%;
+    top: 0.15rem;
+    position: relative;
+}
+
+.logo-svg {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
     top: 0.15rem;
     position: relative;
 }
