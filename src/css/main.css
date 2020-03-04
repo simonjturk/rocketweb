@@ -9,7 +9,9 @@
 /* Tailwind base - put variables under: tailwind.config.js */
 @import "node_modules/tailwindcss/base";
 
-
+h1 {
+  @apply text-4xl;
+}
 
 
 /* Tailwind component classes registered by plugins*/

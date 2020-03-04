@@ -1,11 +1,7 @@
 {{ define "main" }}
 
-
-
 {{ partial "hero.html" . }}
-
-{{ partial "features.html" . }}
-
+{{ partial "sections.html" (dict "context" . "sections" .Params.sections) }}
 
 
 {{ end }}

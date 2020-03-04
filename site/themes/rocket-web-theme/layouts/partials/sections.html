@@ -1,0 +1,4 @@
+{{ $sections := .context.Site.GetPage .sections }}
+{{ range sort ( $sections.Resources.Match "section*/*.md" ) "Params.sort" "asc" }} <br />
+{{ partial "page_section.html" . }}
+{{ end }}
