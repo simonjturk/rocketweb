@@ -1,5 +1,6 @@
 ---
-title: RocketWeb
+headless: true
+sort: 00
 hero:
   button:
     link: "https : //google.com"
@@ -7,6 +8,4 @@ hero:
   heading: Web done right
   paragraph: Some things are worth waiting for your website isn't one of them.
   sub_heading: Fast.Secure.Responsive.Awesome
-
-sections: home
 ---

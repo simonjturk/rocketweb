@@ -1,6 +1,3 @@
 {{ define "main" }}
-
-{{ partial "hero.html" . }}
-
 {{ if isset .Params "sections"}} {{ partial "sections.html" (dict "context" . "sections" .Params.sections) }} {{end}}
 {{ end }}

@@ -1,4 +1,14 @@
-{{ $sections := .context.Site.GetPage .sections }}
-{{ range sort ( $sections.Resources.Match "section*/*.md" ) "Params.sort" "asc" }} <br />
-{{ partial "page_section.html" . }}
+{{ $sections := .context.Site.GetPage "/pages" }}
+
+{{$resource_match := printf "%s%s" .sections "/sections/*/*.md"}}
+
+<!--
+resource match: {{$resource_match}} </br>
+aa: {{$sections.Resources.ByType "page"}} </br>
+bb: {{$sections.Resources.Match $resource_match  }} </br>
+ -->
+{{ range sort ( $sections.Resources.Match $resource_match  ) "Params.sort" "asc" }}
+{{ if isset .Params "information"}} {{ partial "page_section.html" . }} {{end}}
+{{ if isset .Params "hero"}} {{ partial "hero.html" . }} {{end}}
+
 {{ end }}
