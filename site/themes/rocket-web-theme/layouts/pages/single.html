@@ -1,3 +1,6 @@
 {{ define "main" }}
-{{ if isset .Params "sections"}} {{ partial "sections.html" (dict "context" . "sections" .Params.sections) }} {{end}}
+
+{{ if isset .Params "sections"}} {{ partial "sections.html" (dict "context" . "sections" .Params.sections) }}
+{{end}}
+{{.Content}}
 {{ end }}

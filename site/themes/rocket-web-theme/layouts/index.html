@@ -1,7 +1,32 @@
 {{ define "main" }}
 
+{{$dir := .Page.File.Dir}}
+{{$widgetsPath := printf "%s%s" $dir "home"}}
 
-{{ partial "sections.html" (dict "context" . "sections" .Params.sections) }}
 
+{{$widgetHeadless := .Site.GetPage $widgetsPath}}
+
+
+
+
+
+{{ $widgets := $widgetHeadless.Resources.ByType "page" }}
+{{range $widgets}}
+
+{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+
+<!--
+dir: {{$dir}} </br>
+widgetsPath: {{$widgetsPath}} </br>
+widgets: {{$widgetHeadless}} </br>
+widget: {{.Params.widget}} </br>
+partial: {{$partial}} </br>
+-->
+{{if isset .Params "widget"}}
+{{partial $partial .}}
+{{end}}
+{{end}}
+
+{{.Content}}
 
 {{ end }}

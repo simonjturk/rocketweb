@@ -1,5 +1,6 @@
 ---
 headless: true
+widget: hero
 sort: 00
 hero:
   button:

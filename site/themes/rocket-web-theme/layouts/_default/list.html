@@ -1,8 +1,47 @@
 {{ define "main" }}
+{{$dir := .Page.File.Dir}}
+{{$widgetsPath := printf "%s%s" $dir "widgets"}}
+
+
+{{$widgetHeadless := .Site.GetPage $widgetsPath}}
+
+{{ $page := . }}
+{{ range where (readDir (print "content/" .File.Dir)) ".IsDir" true }}
+{{ $widgetHeadless := $page.GetPage .Name }}
+{{ $widgets := $widgetHeadless.Resources.ByType "page" }}
+{{range $widgets}}
+
+{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+<!--
+dir: {{$dir}} </br>
+widgetsPath: {{$widgetsPath}} </br>
+widget: {{.Params.widget}} </br>
+
+partial: {{$partial}}</br>
+
+-->
+{{if isset .Params "widget"}}
+{{partial $partial .}}
+{{end}}
+{{end}}
+{{ end }}
+
+
+
+
+
+
+
+
+
+{{ .Content }}
+
+{{ if (eq .Params.showChildren true) }}
 {{ range .Pages }}
 <article class="text-gray-700 mx-4 sm:mx-12 mb-4">
-    <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+    <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Params.Title }}</a></h1>
     {{ .Content }}
 </article>
 {{ end }}
+{{end}}
 {{ end }}
