@@ -9,7 +9,9 @@
 {{$widgetHeadless := .Site.GetPage $widgetsPath}}
 
 {{ $widgets := $widgetHeadless.Resources.ByType "page" }}
-{{range sort ( $widgets) "Params.sort" "asc"}}
+{{range $i,$p := sort ( $widgets) "Params.sort" "asc"}}
+
+{{$even := (modBool $i 2)}}
 
 {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
 
@@ -22,7 +24,9 @@ widget: {{.Params.widget}} </br>
 partial: {{$partial}} </br>
 -->
 {{if isset .Params "widget"}}
-{{partial $partial .}}
+<div class=" {{if ($even)}} bg-orange-100 {{end}}">
+    {{partial $partial .}}
+</div>
 {{end}}
 {{end}}
 
