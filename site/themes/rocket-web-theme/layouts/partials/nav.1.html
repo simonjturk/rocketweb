@@ -1,0 +1,61 @@
+<nav class="relative bg-white border-b-2 border-gray-300 text-gray-900">
+    <div class="container mx-auto flex justify-between">
+        <div class="relative block p-4 lg:p-6 text-xl text-orange-600 font-bold"><a href="{{ .Site.Home.Permalink }}"
+                class="font-bold font-display  ">
+                {{ .Site.Title }}
+            </a>
+
+        </div>
+
+        <div class="flex sm:hidden text-black ">
+            <button id="nav-open" aria-label="open main menu" class="flex items-center  ">
+
+                <span class="w-6 h-6"> {{partial "zondico.html" "menu"}}</span>
+
+
+            </button>
+            <button id="nav-close" aria-label="close main menu" class="hidden flex items-center">
+                <span class="w-6 h-6"> {{partial "zondico.html" "close"}}</span>
+            </button>
+        </div>
+
+        <ul id="nav-menu" class="w-full flex-grow sm:flex items-center sm:w-auto hidden sm:block justify-end list-reset mt-2 sm:mt-0">
+
+            {{ $currentPage := . }}
+
+
+            {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <!--Hoverable Link-->
+            <li class="hoverable hover:bg-orange-600">
+                <a href="#" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-orange-600 hover:text-white">{{.Name}}</a>
+                <div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl sm:bg-orange-600">
+                    <div class="container mx-auto  flex flex-row flex-wrap justify-between mx-2">
+
+                        <ul class="sm:w-full sm:flex sm:justify-center">
+                            <li class=" px-4{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            {{ range .Children }}
+                            <li class="px-4{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            {{ else }}
+            <!--Regular Link-->
+            <li class="hover:bg-orange-600 hover:text-white">
+                <a href="{{.URL}}" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">{{.Name}}</a>
+            </li>
+            {{ end }}
+
+            {{end}}
+
+
+
+        </ul>
+    </div>
+</nav>

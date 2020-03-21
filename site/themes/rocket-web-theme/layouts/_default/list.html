@@ -9,9 +9,10 @@
 {{ range where (readDir (print "content/" .File.Dir)) ".IsDir" true }}
 {{ $widgetHeadless := $page.GetPage .Name }}
 {{ $widgets := $widgetHeadless.Resources.ByType "page" }}
-{{range $widgets}}
+{{range sort ( $widgets) "Params.sort" "asc"}}
 
 {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+
 <!--
 dir: {{$dir}} </br>
 widgetsPath: {{$widgetsPath}} </br>

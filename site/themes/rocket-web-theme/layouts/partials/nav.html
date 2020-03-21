@@ -1,48 +1,48 @@
-<nav class="relative bg-white border-b-2 border-gray-300 text-gray-900">
-    <div class="container mx-auto flex justify-between">
-        <div class="relative block p-4 lg:p-6 text-xl text-orange-600 font-bold"><a href="{{ .Site.Home.Permalink }}"
-                class="font-bold font-display  ">
-                {{ .Site.Title }}
-            </a></div>
-
-
-        <ul class="flex">
-
-            {{ $currentPage := . }}
-
-
-            {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
-            <!--Hoverable Link-->
-            <li class="hoverable hover:bg-orange-600 hover:text-white">
-                <a href="#" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-orange-600 hover:text-white">{{.Name}}</a>
-                <div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-orange-600">
-                    <div class="container mx-auto  flex flex-row flex-wrap justify-between mx-2">
-
-                        <ul class="w-full flex justify-center">
-                            <li class=" px-4{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            {{ range .Children }}
-                            <li class="px-4{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                                <a href="{{ .URL }}">{{ .Name }}</a>
-                            </li>
-                            {{ end }}
-                        </ul>
-                    </div>
-                </div>
-            </li>
-            {{ else }}
-            <!--Regular Link-->
-            <li class="hover:bg-orange-600 hover:text-white">
-                <a href="{{.URL}}" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">{{.Name}}</a>
-            </li>
-            {{ end }}
-
-            {{end}}
-
-
-
-        </ul>
+<header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+    <div class="flex-1 flex justify-between items-center">
+        <a class="font-bold font-display text-xl text-orange-600 " href="{{ .Site.Home.Permalink }}">
+            {{ .Site.Title }}
+        </a>
     </div>
-</nav>
+
+    <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg"
+            width="20" height="20" viewBox="0 0 20 20">
+            <title>menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+    </label>
+    <input class="hidden" type="checkbox" id="menu-toggle" />
+
+    <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+        <nav>
+            <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                <li class="group"><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 "
+                        href="#">{{.Name}}</a>
+                    <ul class="absolute hidden group-hover:block bg-white w-40">
+                        <li class="pl-6 py-3 px-0 hover:bg-orange-400 {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ range .Children }}
+                        <li class="hover:bg-orange-400 pl-6 py-3 px-0  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </li>
+
+                {{else}}
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400" href="{{.URL}}">{{.Name}}</a></li>
+
+                {{ end }}
+                {{end}}
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Features</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
+                        href="#">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+
+</header>

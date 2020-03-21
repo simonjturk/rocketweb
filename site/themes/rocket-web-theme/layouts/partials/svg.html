@@ -1,6 +1,3 @@
-<span class="logo-svg">
-    {{- $fname:=print "themes/rocket-web-theme/static/images/" . ".svg" -}}
-    {{- $path:="<path" -}}
-    {{- $fill:="<path fill=\"currentColor\"" -}}
-    {{ replace (readFile $fname) $path $fill | safeHTML }}
-</span>
+{{- $fname:=print .path -}}
+{{- $path:="<path" -}} {{- $fill:="<path fill=\"currentColor\"" -}}
+    {{/* replace (readFile $fname) $path $fill | safeHTML */}} {{ readFile $fname | safeHTML }}

@@ -1,4 +1,5 @@
 ---
+title: hero
 headless: true
 widget: hero
 sort: 00
