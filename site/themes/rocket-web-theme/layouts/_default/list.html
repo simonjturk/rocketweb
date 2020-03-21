@@ -38,11 +38,47 @@ partial: {{$partial}}</br>
 {{ .Content }}
 
 {{ if (eq .Params.showChildren true) }}
-{{ range .Pages }}
-<article class="text-gray-700 mx-4 sm:mx-12 mb-4">
-    <h1 class="font-bold font-thin text-3xl text-gray-700"><a href="{{ .Permalink }}">{{ .Params.Title }}</a></h1>
-    {{ .Content }}
-</article>
-{{ end }}
+
+<div class="flex flex-wrap -mx-1 overflow-hidden">
+    {{ range .Pages }}
+    <div class="my-1 px-1 w-full overflow-hidden md:w-1/2 xl:w-1/3">
+        <!-- Article -->
+        <article class="overflow-hidden rounded-lg ">
+
+            <a href="#">
+                <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+            </a>
+
+            <header class="flex items-center justify-between leading-tight p-2 md:p-4 bg-white">
+                <h1 class="text-lg">
+                    <a class="no-underline hover:underline text-black" href="#">
+                        {{.Title}}
+                    </a>
+                </h1>
+                <p class="text-grey-darker text-sm">
+                    11/1/19
+                </p>
+            </header>
+
+            <footer class="flex items-center justify-between leading-none p-2 md:p-4 bg-white">
+                <a class="flex items-center no-underline hover:underline text-black" href="#">
+                    Summary
+                    <p class="ml-2 text-sm">
+
+                    </p>
+                </a>
+                <a class="no-underline text-red-600 hover:text-red-dark" href="#">
+                    <span class="hidden">Like</span>
+                    <i class="fa fa-heart"></i>
+                </a>
+            </footer>
+
+        </article>
+        <!-- END Article -->
+    </div>
+    {{ end }}
+</div>
+
+
 {{end}}
 {{ end }}
