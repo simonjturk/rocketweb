@@ -24,7 +24,7 @@ widget: {{.Params.widget}} </br>
 partial: {{$partial}} </br>
 -->
 {{if isset .Params "widget"}}
-<div class=" {{if ($even)}} bg-orange-100 {{end}}" data-aos="zoom-in">
+<div class=" {{if ($even)}} bg-white {{end}}" data-aos="zoom-in">
     {{partial $partial .}}
 </div>
 {{end}}
