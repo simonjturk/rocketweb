@@ -26,3 +26,7 @@ h2 {
 
 /* Tailwind's utility classes - generated based on config file */
 @import "node_modules/tailwindcss/utilities";
+
+
+/* AOS */
+@import "node_modules/aos/dist/aos";

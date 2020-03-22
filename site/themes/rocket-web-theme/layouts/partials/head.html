@@ -13,12 +13,13 @@
 <meta name="author" content="{{ .Params.Author}}" />
 {{ end }}
 
-<base
-    href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
+<base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
 
 {{ $stylesheet := .Site.Data.webpack.main }}
 {{ with $stylesheet.css }}
 <link href="{{ relURL . }}" rel="stylesheet">
+
+
 {{ end }}
 
 {{ hugo.Generator }}
