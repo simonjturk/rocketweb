@@ -7,5 +7,3 @@ sort: 50
 heading: Contact Us
 subHeading: We would really love to hear from you
 ---
-
-we are awesome
