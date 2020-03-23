@@ -27,9 +27,17 @@
     <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2">
 
         <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
-            <h3 class="text-white">
-                Services
+            {{ $t := .Site.GetPage "section" "services" }}
+            <h3 class="text-white text-xl uppercase">
+                <a href="{{$t.Page.Permalink}}" class="hover:text-orange-600">{{$t.Title}}</a>
             </h3>
+            <ul class="">
+
+                {{ range sort ( $t.Pages ) "Params.menu.main.weight" "asc" }}
+
+                <li class="text-gray-400 uppercase"><a href="{{.Page.Permalink}}" class="hover:text-orange-600">{{.Title}}</a></li>
+                {{ end }}
+            </ul>
         </div>
 
         <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
