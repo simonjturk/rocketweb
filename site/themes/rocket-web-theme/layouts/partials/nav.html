@@ -15,16 +15,33 @@
 
     <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
         <nav>
+
             <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
                 {{ if .HasChildren }}
-                <li class="group"><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 "
-                        href="#">{{.Name}}</a>
-                    <ul class="absolute hidden group-hover:block bg-white w-40">
+                <li class="group {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}">
+
+                    <div class="flex items-center justify-between">
+                        <div>
+
+                            <a class="lg:p-4 py-3 px-0 block border-none border-b-2 hover:border-orange-400 hover:border-solid {{ if $currentPage.IsMenuCurrent "main" . }}border-orange-400{{ end }}"
+                                href="{{.URL}}">
+                                {{.Name}}</a>
+                        </div>
+
+                        <div class="pl-2 md:hidden text-orange-600">
+                            <svg class="stroke-current text-orange-600 inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512">
+                                <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <ul class="absolute hidden group-hover:block bg-white  w-full lg:w-45">
 
                         {{ range .Children }}
-                        <li class="hover:bg-orange-400 pl-6 py-3 px-0  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                        <li class="border-dotted border-b  hover:bg-orange-400 py-3 px-3  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
                             <a href="{{ .URL }}">{{ .Name }}</a>
                         </li>
                         {{ end }}
@@ -32,13 +49,13 @@
                 </li>
 
                 {{else}}
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400" href="{{.URL}}">{{.Name}}</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}"
+                        href="{{.URL}}">{{.Name}}</a></li>
 
                 {{ end }}
                 {{end}}
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">Features</a></li>
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
-                        href="#">Support</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="#">About</a></li>
+
             </ul>
         </nav>
     </div>
