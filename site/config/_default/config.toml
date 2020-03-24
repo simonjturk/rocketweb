@@ -3,7 +3,7 @@ languageCode = "en-us"
 languageLang = "en"
 title = "RocketWeb"
 theme = "rocket-web-theme"
-
+copyright = "&copy; {year}"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details: 
