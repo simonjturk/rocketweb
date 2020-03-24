@@ -17,8 +17,14 @@
         <nav>
 
             <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+                <!-- Home link -->
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 " href="{{.Site.Home.Permalink}}">Home</a></li>
+
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
+
+
+
                 {{ if .HasChildren }}
                 <li class="group {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}">
 
