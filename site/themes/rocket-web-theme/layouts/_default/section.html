@@ -1,13 +1,8 @@
 {{ define "main" }}
+{{$page := .}}
 
-<div class="bg-gray-600 flex flex-col items-center py-8">
-    <h1 class="uppercase text-6xl text-white font-bold leading-none tracking-wide mb-2">
-        {{.Title}}
-    </h1>
-    <h2 class="uppercase text-base lg:text-2xl text-orange-500 text-secondary tracking-widest mb-6">
-        {{.Params.description}}
-    </h2>
-</div>
+{{partial "widgets" $page}}
+
 <main class="
         mt-8 lg:w-4/6 lg:mx-auto">
     {{ .Content }}

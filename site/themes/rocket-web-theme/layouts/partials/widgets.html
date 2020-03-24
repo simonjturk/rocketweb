@@ -1,0 +1,33 @@
+{{$context := .}}
+
+{{$dir := .Page.File.Dir}}
+{{$widgetsPath := printf "%s%s" $dir "widgets"}}
+
+
+{{$widgetHeadless := .Site.GetPage $widgetsPath}}
+
+
+{{ $widgets := $widgetHeadless.Resources.ByType "page" }}
+
+<!--
+dir: {{$dir}} </br>
+widgetsPath: {{$widgetsPath}} </br>
+widgets: {{$widgetHeadless}} </br>
+-->
+{{range $i,$p := sort ( $widgets) "Params.sort" "asc"}}
+
+{{$even := (modBool $i 2)}}
+
+{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+
+
+<!--
+widget: {{.Params.widget}} </br>
+partial: {{$partial}} </br>
+-->
+{{if isset .Params "widget"}}
+<div class=" {{if ($even)}} bg-white {{end}}" data-aos="zoom-in">
+    {{partial $partial .}}
+</div>
+{{end}}
+{{end}}
