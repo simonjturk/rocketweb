@@ -1,7 +1,9 @@
 ---
 title: Contact
 headless: false
-sections: home
+description: RocketWeb is based in Hobart, Tasmania.  Contact us now to talk to us about your next web project
+
+
 
 header:
   title: Contact Us

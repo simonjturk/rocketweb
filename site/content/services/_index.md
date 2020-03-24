@@ -1,7 +1,7 @@
 ---
 title: Services
 date: 2020-02-27T03:24:45.348Z
-description: We do loads of stuff
+description: RocketWeb develops stunning websites and webapps with a focus on speed, responsiveness, and security
 
 header:
   title: Services
