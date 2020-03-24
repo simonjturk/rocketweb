@@ -1,0 +1,12 @@
+{{$xl := ""}}
+
+{{if .Get "xl" }}
+{{$xl = .Get "xl"}}
+{{else}}
+{{$xl = "1/4"}}
+{{end}}
+
+
+<div class="my-2 px-2 w-full  sm:my-2 sm:px-2 sm:w-full md:w-full lg:w-1/3 xl:w-{{$xl}}">
+    {{.Inner}}
+</div>

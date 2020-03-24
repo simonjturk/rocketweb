@@ -15,5 +15,36 @@ menu:
     title: Contact
     weight: 20
 ---
+{{< row >}}
+  {{< column >}} 
+    {{< card_simple icon="facebook" iconPack="fontawesome" >}}
+    facebook
+    {{</card_simple>}}
+  {{< /column >}}
 
-Some Content
+   {{< column >}} 
+    {{< card_simple icon="skype" iconPack="fontawesome" >}}
+    skype
+    {{</card_simple>}}
+  {{< /column >}}
+     {{< column >}} 
+    {{< card_simple icon="video" iconPack="fontawesome" >}}
+    Zoom
+    {{</card_simple>}}
+  {{< /column >}}
+
+       {{< column >}} 
+    {{< card_simple icon="slack" iconPack="fontawesome" >}}
+    Slack
+    {{</card_simple>}}
+  {{< /column >}}
+{{< /row >}}
+
+{{< row >}}
+  {{< column xl="full">}} 
+   ## Fill out our form below
+{{< contact_form >}}
+  {{< /column >}}
+{{< /row >}}
+
+
