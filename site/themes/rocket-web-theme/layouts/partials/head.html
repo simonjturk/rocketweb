@@ -1,5 +1,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+{{partial "meta" .}}
+
+<!--
 <title>{{ block "title" . }}
     {{- .Title }} - {{ .Site.Title -}}
     {{ end }}</title>
@@ -12,6 +16,8 @@
 {{ if .Params.Author }}
 <meta name="author" content="{{ .Params.Author}}" />
 {{ end }}
+-->
+
 
 <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
 
