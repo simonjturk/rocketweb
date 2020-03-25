@@ -6,12 +6,18 @@
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
+contacts = [
+  {type="email", value="info@rockitweb.com.au"},
+  {type="phone", value="888 888 88 88"},
+  {type="address", value={street = "223 Marys Hope Rd", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"}},
+
+]
 email = "info@rocketweb.com.au"
 phone = "888 888 88 88"
-abn = "222333xxx"
+abn = "95763165026"
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "450 Serra Mall", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"}
+address = {street = "223 Marys Hope Rd", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.

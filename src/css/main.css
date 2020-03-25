@@ -21,6 +21,8 @@ h2 {
 
 /* Site Specific */
 @import "./site.css";
+@import "./markdown.css";
+
 
 
 

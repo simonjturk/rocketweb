@@ -1,7 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
-title = "RocketWeb"
+title = "RockitWeb"
 theme = "rocket-web-theme"
 copyright = "&copy; {year}"
 
