@@ -6,6 +6,7 @@ export function validateForm(formName, constraints) {
     var formSelector = "form#" + formName;
     var form = document.querySelector(formSelector);
 
+    //get the submit button
     var elements = getElementsByAttrib('type="submit"');
     var submitButton = elements[0];
 
@@ -71,6 +72,11 @@ export function validateForm(formName, constraints) {
 
     // Shows the errors for a specific input
     function showErrorsForInput(input, errors) {
+        //if it's the bot-field, we don't care about it
+        if (input.name === "bot-field") {
+            return;
+        }
+
         // This is the root of the input
         var formGroup = closestParent(input.parentNode, "form-group")
             // Find where the error messages will be insert into
@@ -132,7 +138,7 @@ export function validateForm(formName, constraints) {
 
     function showSuccess() {
         // We made it \:D/
-        alert("Success!");
+        // alert("Success!");
     }
 
 }
