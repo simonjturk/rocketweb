@@ -20,7 +20,7 @@ export function validateForm(formName, constraints) {
     // Hook up the inputs to validate on the fly
     var inputs = form.querySelectorAll("input, textarea, select")
     for (var i = 0; i < inputs.length; ++i) {
-        inputs.item(i).addEventListener("change", function (ev) {
+        inputs.item(i).addEventListener("keyup", function (ev) {
             var errors = validate(form, constraints) || {};
             showErrorsForInput(this, errors[this.name]);
             formValid(errors);
@@ -73,14 +73,19 @@ export function validateForm(formName, constraints) {
     // Shows the errors for a specific input
     function showErrorsForInput(input, errors) {
         //if it's the bot-field, we don't care about it
-        if (input.name === "bot-field") {
-            return;
-        }
+        // if (input.name === "bot-field") {
+        //     return;
+        // }
 
         // This is the root of the input
         var formGroup = closestParent(input.parentNode, "form-group")
-            // Find where the error messages will be insert into
-            , messages = formGroup.querySelector(".messages");
+        // Find where the error messages will be insert into
+
+        if (!formGroup) {
+            return;
+        }
+
+        var messages = formGroup.querySelector(".messages");
         // First we remove any old messages and resets the classes
         resetFormGroup(formGroup);
         // If we have errors

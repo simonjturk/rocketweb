@@ -10,13 +10,13 @@ contacts = [
  
   {type="phone", value="888 888 88 88", contactPage=true, icon = "phone", icon_pack = "fontawesome", name = "Phone", link = "", message="Feel like a chat? Call us on"},
   {type="address", message="", value={street = "223 Marys Hope Rd", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"},contactPage=false, icon = "facebook-f", icon_pack = "fontawesome", name = "DM Me", link = ""    },
-  {type="facebook", value="info@rockitweb.com.au", contactPage=true,icon = "facebook", icon_pack = "fontawesome", name = "Facebook", link = "", message="Reachout on messenger"},
-  {type="skype", value="TODO", icon = "skype", contactPage=true, icon_pack = "fontawesome", name = "Skype", link = "", message="Chat to us on skype"},
-  {type="zoom", value="TODO", icon = "video",  contactPage=true,icon_pack = "fontawesome", name = "Zoom", link = "", message="Prefer Zoom?, go for it"},
-  {type="email", value="info@rockitweb.com.au", contactPage=true,icon = "envelope", icon_pack = "fontawesome", name = "email", link = "", message="We still love email"}
+  {type="facebook", value="info@rockitweb.com.au", contactPage=false,icon = "facebook", icon_pack = "fontawesome", name = "Facebook", link = "", message="Reachout on messenger"},
+  {type="skype", value="TODO", icon = "skype", contactPage=false, icon_pack = "fontawesome", name = "Skype", link = "", message="Chat to us on skype"},
+  {type="zoom", value="TODO", icon = "video",  contactPage=false,icon_pack = "fontawesome", name = "Zoom", link = "", message="Prefer Zoom?, go for it"},
+  {type="email", value="info@rockitweb.com.au", contactPage=true,icon = "envelope", icon_pack = "fontawesome", name = "email", link = "", message="We love getting emails!"}
 ]
 email = "info@rocketweb.com.au"
-phone = "888 888 88 88"
+phone = "+61 123456"
 abn = "95763165026"
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
