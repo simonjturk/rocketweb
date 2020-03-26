@@ -8,4 +8,5 @@ window.addEventListener('load', AOS.refresh);
 
 import "./validate-contact-form.js"
 
+import "../css/fonts.css";
 import "../css/main.css";
