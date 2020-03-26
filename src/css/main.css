@@ -16,6 +16,19 @@ h1 {
 h2 {
   @apply  uppercase text-2xl text-orange-500  tracking-widest mb-6
 }
+
+.has-error input{
+  @apply border border-red-500
+}
+
+.has-error label {
+  @apply text-red-500
+}
+
+.button-disabled{
+  @apply opacity-50 cursor-not-allowed
+}
+
 /* Tailwind component classes registered by plugins*/
 @import "node_modules/tailwindcss/components";
 

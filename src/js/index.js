@@ -5,4 +5,7 @@ AOS.init({
 });
 
 window.addEventListener('load', AOS.refresh);
-import "./css/main.css";
+
+import "./validate-contact-form.js"
+
+import "../css/main.css";
