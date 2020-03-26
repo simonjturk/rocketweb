@@ -144,6 +144,8 @@ export function validateForm(formName, constraints) {
     function showSuccess() {
         // We made it \:D/
         // alert("Success!");
+
+        form.submit();
     }
 
 }
