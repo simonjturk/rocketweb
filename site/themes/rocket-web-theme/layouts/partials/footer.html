@@ -20,13 +20,7 @@
 
         </div>
         <div class="flex ">
-            {{range .Site.Params.social_links}}
-            <div class="mx-4">
-                <div class="text-white icon-16">
-                    {{partial "icon.html" (dict "icon_pack" .icon_pack "icon" .icon )}}
-                </div>
-            </div>
-            {{end}}
+           {{partial "social" .}}
         </div>
 
     </div>
