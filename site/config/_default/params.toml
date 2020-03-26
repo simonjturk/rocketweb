@@ -39,7 +39,7 @@ appointment_url = "https://calendly.com"
 # Social links
 #   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
 social_links = [
-  {icon = "facebook-f", icon_pack = "fontawesome", name = "DM Me", link = ""},
+  {icon = "facebook", icon_pack = "fontawesome", name = "DM Me", link = ""},
   {icon = "twitter", icon_pack = "fontawesome", name = "DM Me", link = ""},
   {icon = "linkedin-in", icon_pack = "fontawesome", name = "Chat on Keybase", link = ""},
   {icon = "instagram", icon_pack = "fontawesome", name = "Discuss on Forum", link = ""}
