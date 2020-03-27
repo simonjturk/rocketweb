@@ -7,5 +7,5 @@ sort: 00
 heading: Website Development
 paragraph: 
 sub_heading: Sub heading
-image: web_developer.svg
+image: mobile_development.svg
 ---

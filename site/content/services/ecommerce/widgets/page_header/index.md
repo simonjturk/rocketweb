@@ -4,8 +4,8 @@ headless: true
 widget: page_heading
 sort: 00
 
-heading: Website Development
+heading: ECOMMERCE
 paragraph: 
 sub_heading: Sub heading
-image: web_developer.svg
+image: add_to_cart.svg
 ---
