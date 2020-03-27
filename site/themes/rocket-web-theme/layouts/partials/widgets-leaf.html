@@ -1,3 +1,14 @@
+{{/*
+This is used to determine the widgets bundles(leaf) for leasf bundles (index.md)
+Once it has the list of reources/widgets, it hands over the widgets-display partial
+to iterate and display the widgets.
+
+NOTE ON HOME PAGE. home page widgets are kept in the home folder so we will test for IsHome
+nd if so change the $dir to point to /home.
+
+TODO: should probably make the /home configurable in sit.config
+*/}}
+
 {{$context := .}}
 
 {{$dir := ""}}
@@ -14,18 +25,9 @@
 
 {{end}}
 
-
-
-
 {{$page := $context.Site.GetPage $dir}}
 {{$resources := $page.Resources.Match "widgets/*/*"}}
 
-{{range $i,$p := sort ($resources) "Params.sort" "asc" }}
-{{$even := (modBool $i 2)}}
-{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
-{{if isset .Params "widget"}}
-<div class=" {{if (not $even)}} bg-white {{end}}" {{if gt $i 0}} data-aos="zoom-in" {{end}}>
-    {{partial $partial .}}
-</div>
-{{end}}
-{{end}}
+
+
+{{partial "widgets-display" $resources}}
