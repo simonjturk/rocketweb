@@ -1,35 +1,7 @@
 {{ define "main" }}
 
-{{$context := .}}
 
-{{$dir := .Page.File.Dir}}
-{{$widgetsPath := printf "%s%s" $dir "home"}}
-
-
-{{$widgetHeadless := .Site.GetPage $widgetsPath}}
-
-{{ $widgets := $widgetHeadless.Resources.ByType "page" }}
-{{range $i,$p := sort ( $widgets) "Params.sort" "asc"}}
-
-{{$even := (modBool $i 2)}}
-
-{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
-
-
-<!--
-dir: {{$dir}} </br>
-widgetsPath: {{$widgetsPath}} </br>
-widgets: {{$widgetHeadless}} </br>
-widget: {{.Params.widget}} </br>
-partial: {{$partial}} </br>
--->
-{{if isset .Params "widget"}}
-<div class=" {{if ($even)}} bg-white {{end}}" {{if gt $i 0}} data-aos="zoom-in" {{end}}>
-    {{partial $partial .}}
-</div>
-{{end}}
-{{end}}
+{{partial "widgets-leaf" .}}
 
 {{.Content}}
-
-{{ end }}
+{{end}}

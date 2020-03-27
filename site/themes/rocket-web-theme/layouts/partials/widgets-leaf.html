@@ -1,17 +1,26 @@
 {{$context := .}}
 
-{{$dir := .Page.File.Dir}}
+{{$dir := ""}}
 
+{{ if .Page.IsHome}}
+{{$dir = "/home"}}
+{{else}}
+{{$dir = .Page.File.Dir}}
 {{/*remove trailing / */}}
 {{$dir = replace $dir "/" "" }}
 
 {{/*add leading / */}}
 {{$dir = print "/" $dir }}
 
+{{end}}
+
+
+
+
 {{$page := $context.Site.GetPage $dir}}
 {{$resources := $page.Resources.Match "widgets/*/*"}}
 
-{{range $i,$p := $resources }}
+{{range $i,$p := sort ($resources) "Params.sort" "asc" }}
 {{$even := (modBool $i 2)}}
 {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
 {{if isset .Params "widget"}}
