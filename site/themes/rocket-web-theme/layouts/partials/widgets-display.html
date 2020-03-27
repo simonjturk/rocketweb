@@ -2,7 +2,6 @@
 
 
 {{range $i,$p := sort ($resources) "Params.sort" "asc" }}
-{{$i}}:{{.}}
 {{$even := (modBool $i 2)}}
 {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
 {{if isset .Params "widget"}}

@@ -4,7 +4,7 @@ headless: true
 widget: page_heading
 sort: 00
 
-heading: Website Development
+heading: SEO
 paragraph: 
 sub_heading: Sub heading
 image: search.svg

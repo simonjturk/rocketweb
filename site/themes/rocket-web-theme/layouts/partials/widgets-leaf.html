@@ -26,7 +26,7 @@ TODO: should probably make the /home configurable in sit.config
 {{end}}
 
 {{$page := $context.Site.GetPage $dir}}
-{{$resources := $page.Resources.Match "widgets/*/*"}}
+{{$resources := $page.Resources.Match "widgets/*/*.md"}}
 
 
 
