@@ -1,5 +1,10 @@
 {{ define "main" }}
-{{ if isset .Params "sections"}} {{ partial "sections.html" (dict "context" . "sections" .Params.sections) }}
+{{$page := .}}
+
+{{partial "widgets-leaf" $page}}
+
+<div class="markdown mx-8">
+    {{.Content}}
+</div>
+
 {{end}}
-{{.Content}}
-{{ end }}

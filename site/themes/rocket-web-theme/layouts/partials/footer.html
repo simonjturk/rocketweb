@@ -7,20 +7,22 @@
                         <div class="icon-16"></span>{{partial "zondico.html" "phone"}}</div>
 
                     </div>
-                    <div class="px-4">{{.Site.Params.phone}}</div>
+                    <div class="px-4">{{partial "contact-link" (dict "context" . "type" "phone")}}</div>
                 </div>
                 <div class="flex items-top">
                     <div class="text-orange-600">
                         <div class="icon-16"></span>{{partial "zondico.html" "envelope"}}</div>
 
                     </div>
-                    <div class="px-4">{{.Site.Params.email}}</div>
+                    <div class="px-4 text-white">
+                        {{partial "contact-link" (dict "context" . "type" "email")}}
+                    </div>
                 </div>
             </div>
 
         </div>
         <div class="flex ">
-           {{partial "social" .}}
+            {{partial "social" .}}
         </div>
 
     </div>
@@ -63,6 +65,12 @@
         {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} {{ end }}
         <a class="px-2 text-orange-600" href="{{ .Site.Home.Permalink }}"> {{.Site.Title}}</a> All rights reserved. ABN
         {{.Site.Params.abn}}
+
+        <div>
+            <a class="px-2 text-orange-600" href="{{ .Site.Home.Permalink }}privacy"> Privacy Policy</a>
+        </div>
+
     </div>
+
 
 </footer>

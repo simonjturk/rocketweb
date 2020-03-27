@@ -1,0 +1,30 @@
+{{/*
+used to provide a contact link. it should recieve the following dict
+context: the . of the calling template
+type: MANDATORY this is the type of contact e.g email, phone
+value: Optional. the value eg for type email it would be name@blah.com
+if it is not passed then the value will be looked up from the contact array, based on type, that is in the Site.Params
+
+*/}}
+{{$context := .context}}
+{{$type := .type}}
+{{$value := ""}}
+{{if .value}}
+{{$value = .value}}
+{{else}}
+
+{{$contact := partial "functions/get_contact" (dict "context" $context "type" $type)}}
+{{$value = $contact.value}}
+
+{{end}}
+
+
+
+{{/* now handle the different types and render the correct link */}}
+{{if eq $type "email"}}
+<a href="mailto:{{$value}}">{{$value}}</a>
+{{else if eq .type "phone"}}
+<a href="tel:{{$value}}">{{$value}}</a>
+{{else}}
+{{$value}}
+{{end}}

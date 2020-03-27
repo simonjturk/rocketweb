@@ -1,0 +1,22 @@
+{{$context := .}}
+
+{{$dir := .Page.File.Dir}}
+
+{{/*remove trailing / */}}
+{{$dir = replace $dir "/" "" }}
+
+{{/*add leading / */}}
+{{$dir = print "/" $dir }}
+
+{{$page := $context.Site.GetPage $dir}}
+{{$resources := $page.Resources.Match "widgets/*/*"}}
+
+{{range $i,$p := $resources }}
+{{$even := (modBool $i 2)}}
+{{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+{{if isset .Params "widget"}}
+<div class=" {{if (not $even)}} bg-white {{end}}" {{if gt $i 0}} data-aos="zoom-in" {{end}}>
+    {{partial $partial .}}
+</div>
+{{end}}
+{{end}}
