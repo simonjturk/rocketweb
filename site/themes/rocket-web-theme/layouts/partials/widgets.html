@@ -1,6 +1,15 @@
 {{ $scope := .scope }}
-{{ $type := .type }}
+{{ $type := .type }} {{/*type is either branch or leaf depending on the page bundle*/}}
 
 {{ $widgets := (partial "functions/get_widgets" (dict "scope" $scope "type" $type)) }}
 
-{{ partial "widgets-display" $widgets }}
+{{range $i,$p := sort ($widgets) "Params.sort" "asc" }}
+
+    {{$even := (modBool $i 2)}}
+    {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
+    {{if isset .Params "widget"}}
+        <div class=" {{if (not $even)}} bg-white {{end}}" {{if gt $i 0}} data-aos="zoom-in" {{end}}>
+        {{partial $partial .}}
+        </div>
+    {{end}}
+{{end}}

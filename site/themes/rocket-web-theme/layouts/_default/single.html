@@ -1,10 +1,13 @@
 {{ define "main" }}
-{{$page := .}}
+    {{$page := .}}
 
-{{partial "widgets" (dict "scope" $page "type" "leaf") }}
+    {{partial "widgets" (dict "scope" $page "type" "leaf") }}
 
-<div class="markdown mx-8">
-    {{.Content}}
-</div>
-
+    <div class="bg-white">
+        <div class="mt-8 lg:w-4/6 lg:mx-auto">
+            <div class="markdown mx-8">
+                {{.Content}}
+            </div>
+        </div>
+    </div>
 {{end}}

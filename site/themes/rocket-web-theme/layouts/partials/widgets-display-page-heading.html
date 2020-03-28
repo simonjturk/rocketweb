@@ -1,9 +1,0 @@
-{{$resources := .}}
-
-{{/* displays a page heading widget only (rather than looking through all of them*/}}
-{{range $i,$p := sort ($resources) "Params.sort" "asc" }}
-
-    {{ if eq .Params.widget "page_heading" }}
-        {{partial "page_heading_card" .}}
-    {{ end }}
-{{end}}

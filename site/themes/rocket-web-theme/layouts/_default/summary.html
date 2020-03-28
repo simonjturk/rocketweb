@@ -1,0 +1,13 @@
+{{/* for summaries we will render what is in the page header widget in a easily consumed card*/}}
+
+ {{$widget := "page_heading"}}
+
+ {{/* get a collection of page heading widgets (should only be one)*/}}
+ {{ $widgets := (partial "functions/get_widgets" (dict "scope" . "type" $widget )) }}
+
+ {{/*should only be one returned TODO: handle if none returned*/}}
+ {{ range $widgets }} 
+    {{ $imagePath := printf "content/%simages/%s" .Page.Dir .Params.image}}
+
+    {{ partial "card-horizontal" (dict "heading" .Params.heading "subHeading" .Params.subHeading "paragraph" .Params.paragraph "imagePath" $imagePath) }}
+ {{ end }}
