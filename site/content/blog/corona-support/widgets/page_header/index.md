@@ -5,7 +5,9 @@ widget: page_heading
 sort: 00
 
 heading:
-subHeading:  See what we're up to
-paragraph: 
-image: blogging.svg
+subHeading:
+paragraph:
+
+
+image: mobile_development.svg
 ---
