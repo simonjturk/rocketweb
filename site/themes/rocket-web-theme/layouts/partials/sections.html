@@ -1,8 +1,0 @@
-page resources: {{.context.Page.Resources}}
-{{ range sort ( .context.Page.Resources.Match "sections/*/*.md" ) "Params.sort" "asc" }}
-{{ if isset .Params "information"}} {{ partial "page_section.html" . }} {{end}}
-{{ if isset .Params "hero"}} {{partial "hero.html" .}}
-
-{{end}}
-
-{{ end }}

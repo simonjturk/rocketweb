@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 
-{{partial "widgets-leaf" .}}
+{{partial "widgets" (dict "scope" . "type" "leaf") }}
 
 {{.Content}}
 {{end}}

@@ -1,16 +1,6 @@
-{{/*
-This is used to determine the widgets bundles(leaf) for branch bundles (_index.md)
-Once it has the list of reources/widgets, it hands over the widgets-display partial
-to iterate and display the widgets
-*/}}
+{{ $scope := .scope }}
+{{ $type := .type }}
 
-{{$context := .}}
+{{ $widgets := (partial "functions/get_widgets" (dict "scope" $scope "type" $type)) }}
 
-{{$dir := .Page.File.Dir}}
-{{$widgetsPath := printf "%s%s" $dir "widgets"}}
-
-{{$widgetHeadless := .Site.GetPage $widgetsPath}}
-
-{{ $widgets := $widgetHeadless.Resources.ByType "page" }}
-
-{{partial "widgets-display" $widgets}}
+{{ partial "widgets-display" $widgets }}

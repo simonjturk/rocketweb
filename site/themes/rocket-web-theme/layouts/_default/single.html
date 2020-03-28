@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{$page := .}}
 
-{{partial "widgets-leaf" $page}}
+{{partial "widgets" (dict "scope" $page "type" "leaf") }}
 
 <div class="markdown mx-8">
     {{.Content}}

@@ -17,6 +17,7 @@ TODO: should probably make the /home configurable in sit.config
 {{$dir = "/home"}}
 {{else}}
 {{$dir = .Page.File.Dir}}
+
 {{/*remove trailing / */}}
 {{$dir = replace $dir "/" "" }}
 
@@ -28,6 +29,4 @@ TODO: should probably make the /home configurable in sit.config
 {{$page := $context.Site.GetPage $dir}}
 {{$resources := $page.Resources.Match "widgets/*/*.md"}}
 
-
-
-{{partial "widgets-display" $resources}}
+{{ return $resources }}
