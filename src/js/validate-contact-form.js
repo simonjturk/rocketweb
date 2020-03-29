@@ -1,4 +1,7 @@
-import { validateForm } from "./form-validate.js";
+
+
+
+export function validate(form){
 
 // These are the constraints used to validate the form
 var constraints = {
@@ -24,4 +27,11 @@ var constraints = {
 
     }
 };
-validateForm("contact", constraints);
+
+ import( /* webpackChunkName: "validate-form" */ './form-validate').then(module => {
+     module.validateForm(form, constraints);
+ });
+
+}
+
+//validateForm("contact", constraints);

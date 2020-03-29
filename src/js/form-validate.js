@@ -1,10 +1,10 @@
 import validate from 'validate.js';
-export function validateForm(formName, constraints) {
+export function validateForm(form, constraints) {
 
 
 
-    var formSelector = "form#" + formName;
-    var form = document.querySelector(formSelector);
+    //var formSelector = "form#" + formName;
+    //var form = document.querySelector(formSelector);
 
     //get the submit button
     var elements = getElementsByAttrib('type="submit"');

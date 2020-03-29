@@ -21,10 +21,6 @@
     </div>
 
     <div class="w-5/12  hidden lg:block">
-
-        {{$headlessbundle := .Site.GetPage "hero"}}
-        {{ $img := $headlessbundle.Resources.GetMatch (printf "%s%s" "images/" .Params.hero.image) }}
-
         <div class="w-3/5">
             {{ $image_path := printf "content/%simages/%s" .Page.Dir .Params.hero.image}}
             {{partial "svg.html" (dict "context" . "path" $image_path)}}
