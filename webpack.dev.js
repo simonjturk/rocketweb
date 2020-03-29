@@ -12,7 +12,7 @@ module.exports = merge.smart(common, {
 
   output: {
     filename: "[name].js",
-    chunkFilename: "[id].css"
+    chunkFilename: "[id].js"
   },
   module: {
     rules: [
