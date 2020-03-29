@@ -1,10 +1,19 @@
-import validate from 'validate.js';
-export function validateForm(form, constraints) {
+//import validate from 'validate.js';
+export function validateForm(formName, constraints) {
 
+    var formSelector = "form#" + formName;
+    var form = document.querySelector(formSelector);
 
+    //get out of dodge if frm doesn't exists
+    if (! form){
+        return;
+    }
 
-    //var formSelector = "form#" + formName;
-    //var form = document.querySelector(formSelector);
+    var validate;
+     //lazy load our module here
+     import( /* webpackChunkName: "validate" */ 'validate.js').then(module => {
+         validate = module.validate;;
+     });
 
     //get the submit button
     var elements = getElementsByAttrib('type="submit"');

@@ -11,14 +11,7 @@ window.addEventListener('load', AOS.refresh);
  */
 
  //contact form first
-var formSelector = "form#contact"
-var form = document.querySelector(formSelector);
-if (form) {
-    import( /* webpackChunkName: "validate-contact-form" */ './validate-contact-form').then(module => {
-        module.validate(form);
-    });
 
-}
 
 import "./validate-contact-form.js"
 
