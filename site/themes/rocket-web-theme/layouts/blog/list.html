@@ -1,6 +1,19 @@
 {{ define "main" }}
 {{$page := .}}
 
+{{partial "widgets" (dict "scope" $page "type" "branch") }}
+
+<div class="mt-8 lg:w-4/6 lg:mx-auto">
+    <ul class="flex">
+        {{ range .Site.Taxonomies.tags }}
+            <li class="uppercase mx-1 bg-orange-400 hover:bg-orange-700 text-white text-xs font-bold py-1 px-3 rounded-full"><a
+                href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a> </li>
+        {{ end }}
+    </ul>
+</div>
+
+
+
 
 <main class="bg-white">
     <div class="mt-8 lg:w-4/6 lg:mx-auto">
