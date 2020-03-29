@@ -7,13 +7,13 @@ collections:
   - name: blog
     label: Blogs
     label_singular: Blog
-    folder: 'content/blog'
+    folder: 'site/content/blog'
     path: '{{slug}}/index'
     create: true  # Allow users to create new documents in this collection
     fields:  # The fields each document in this collection have
       - label: "Title"
         name: "title"
         widget: "string"
-        pattern: ['.{20,}', "Must have at least 20 characters"]
+        pattern: ['.{10,}', "Must have at least 10 characters"]
       - {label: "Body", name: "body", widget: "markdown"}
   
