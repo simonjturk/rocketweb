@@ -4,7 +4,7 @@ headless: false
 description: RocketWeb is based in Hobart, Tasmania and we take your privacy very seriously
 
 ---
-## Privacy Policy
+## Privacy Policy (test)
 {{< param businessName >}} understands and respects the importance of your privacy. It is important that you read and understand this Privacy Policy. It sets out how we handle your personal information and explains the measures we have taken to abide by the Privacy Act 1988 (Cth) (Privacy Act). It also details how we collect, hold, use and disclose your personal information.
 
 For the purposes of this Privacy Policy, “{{< param businessName >}}” or “we” means {{< param businessName >}} (ABN {{< param abn >}}).

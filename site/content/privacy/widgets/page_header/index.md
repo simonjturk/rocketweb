@@ -6,6 +6,6 @@ sort: 00
 
 heading: Privacy
 sub_heading: Your privacy is important to us
-paragraph: Read our privacy policy below
+paragraph: Please read our privacy policy below
 image: privacy.svg
 ---
