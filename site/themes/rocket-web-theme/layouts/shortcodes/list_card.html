@@ -1,0 +1,17 @@
+{{- $icon := .Get "icon" -}}
+{{- $iconPack := .Get "iconPack" -}}
+
+<div class="self-stretch bg-white text-grey-darker rounded shadow text-center mt-8">
+    <div class="flex justify-center">
+        <div class="bg-white shadow-md rounded-full h-24 w-24 -mt-8 flex items-center justify-center">
+            <div class="text-orange-600 icon-32">
+                {{partial "icon.html" (dict "icon_pack" $iconPack "icon" $icon )}}
+
+            </div>
+        </div>
+    </div>
+    <div class="mt-6">
+        {{.Inner}}
+    </div>
+
+</div>

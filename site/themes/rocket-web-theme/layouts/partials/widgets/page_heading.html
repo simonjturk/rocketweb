@@ -1,0 +1,35 @@
+{{$heading := .Params.heading}}
+{{$subHeading := .Params.subHeading}}
+{{$paragraph := .Params.paragraph}}
+
+<section class="flex flex-col lg:flex-row jusitfy-between items-center  bg-gray-100 py-4">
+    <div class="w-full px-4 flex flex-col  lg:w-7/12  lg:items-end ">
+        <div class="flex flex-col items-center text-center ">
+
+
+            <h1 class="uppercase text-6xl text-blue-900 font-bold leading-none tracking-wide mb-2">
+                {{$heading}}
+            </h1>
+            <h2 class="uppercase text-base lg:text-2xl text-orange-500 text-secondary tracking-widest mb-6">
+                {{$subHeading }}
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                {{$paragraph }}
+            </p>
+        </div>
+
+    </div>
+
+    <div class="w-5/12  hidden lg:block">
+
+        {{$headlessbundle := .Site.GetPage "pageHeading"}}
+        {{ $img := $headlessbundle.Resources.GetMatch (printf "%s%s" "images/" .Params.hero.image) }}
+
+        <div class="w-3/5">
+            {{ $image_path := printf "content/%simages/%s" .Page.Dir .Params.image}}
+            {{partial "svg.html" (dict "context" . "path" $image_path)}}
+        </div>
+
+
+    </div>
+</section>

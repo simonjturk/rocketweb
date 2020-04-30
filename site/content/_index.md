@@ -1,11 +1,8 @@
 ---
 title: RocketWeb
-hero:
-  button:
-    link: 'https : //google.com'
-    text: Learn more
-  heading: Web done right
-  paragraph: Some things are worth waiting for your website isn't one of them.
-  sub_heading: Fast.Secure.Responsive.Awesome
----
+description: RocketWeb is web development agency in Hobart, Tasmania.  We build lightning fast websites for tasmania and beyond
 
+
+# indicates which section to use for the home page (cos it's special).  in this case it is content/pages/home
+sections: home
+---

@@ -1,0 +1,22 @@
+<div class="bg-white text-grey-darker rounded shadow text-center mt-8">
+    <div class="flex justify-center">
+        <div class="bg-orange-500 shadow-md rounded-full h-20 w-20 -mt-8 flex items-center justify-center">
+            <div class="text-white icon-32">
+
+                {{with .icon}}
+
+                {{partial "icon.html" (dict "icon_pack" .pack "icon" .name )}}
+                {{end}}
+            </div>
+        </div>
+    </div>
+    <div class="mt-6">
+        <h1 class="text-xl text-blue-darker">
+            <a href="{{.context.Permalink}}" class="hover:text-orange-600">{{.title}}</a>
+        </h1>
+        <p class="mt-2 text-grey-dark">
+            {{.summary}}
+        </p>
+    </div>
+
+</div>

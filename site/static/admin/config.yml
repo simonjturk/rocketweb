@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: 'static/img/'
+public_folder: 'img'
+collections:
+  - name: blog
+    label: Blogs
+    label_singular: Blog
+    folder: 'site/content/blog'
+    path: '{{slug}}/index'
+    create: true  # Allow users to create new documents in this collection
+    fields:  # The fields each document in this collection have
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        pattern: ['.{10,}', "Must have at least 10 characters"]
+      - {label: "Body", name: "body", widget: "markdown"}
+  

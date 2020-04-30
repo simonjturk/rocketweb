@@ -1,0 +1,12 @@
+{{ $scope := .scope }}
+{{ $type := .type }}
+
+{{ $widgets := "" }}
+
+{{ if eq $type "branch" }}
+{{ $widgets = partial "functions/get_branch_widgets" $scope  }}
+{{ else }}
+{{ $widgets = partial "functions/get_leaf_widgets" $scope  }}
+{{ end }}
+
+{{return $widgets}}

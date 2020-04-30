@@ -1,0 +1,76 @@
+<footer class="lg:px-16 px-6 bg-gray-700 flex flex-col">
+    <div class="flex flex-col  items-start py-6 border-b border-white  sm:flex-row ">
+        <div class="flex-1">
+            <div class="flex flex-col sm:flex-row text-white">
+                <div class="flex items-top">
+                    <div class="text-orange-600">
+                        <div class="icon-16"></span>{{partial "zondico.html" "phone"}}</div>
+
+                    </div>
+                    <div class="px-4">{{partial "contact-link" (dict "context" . "type" "phone")}}</div>
+                </div>
+                <div class="flex items-top">
+                    <div class="text-orange-600">
+                        <div class="icon-16"></span>{{partial "zondico.html" "envelope"}}</div>
+
+                    </div>
+                    <div class="px-4 text-white">
+                        {{partial "contact-link" (dict "context" . "type" "email")}}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="flex ">
+            {{partial "social" .}}
+        </div>
+
+    </div>
+    <div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2">
+
+        <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
+            {{ $t := .Site.GetPage "section" "services" }}
+            <h3 class="text-white text-xl uppercase">
+                <a href="{{$t.Page.Permalink}}" class="hover:text-orange-600">{{$t.Title}}</a>
+            </h3>
+            <ul class="">
+
+                {{ range sort ( $t.Pages ) "Params.menu.main.weight" "asc" }}
+
+                <li class="text-gray-400 uppercase"><a href="{{.Page.Permalink}}" class="hover:text-orange-600">{{.Title}}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+
+        <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
+            <h3 class="text-white">
+                Technology
+            </h3>
+        </div>
+
+        <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
+            <h3 class="text-white">
+                Latest Blogs
+            </h3>
+        </div>
+
+        <div class="my-2 px-2 w-1/2 overflow-hidden sm:my-2 sm:px-2 sm:w-1/2 md:w-full lg:w-1/4 xl:w-1/4">
+            <h3 class="text-white">
+                Mailing List
+            </h3>
+        </div>
+
+    </div>
+    <div class="flex text-gray-600 py-4 border-gray-800  border-t border-white">
+        {{ with site.Copyright }}{{ replace . "{year}" now.Year | markdownify}} {{ end }}
+        <a class="px-2 text-orange-600" href="{{ .Site.Home.Permalink }}"> {{.Site.Title}}</a> All rights reserved. ABN
+        {{.Site.Params.abn}}
+
+        <div>
+            <a class="px-2 text-orange-600" href="{{ .Site.Home.Permalink }}privacy"> Privacy Policy</a>
+        </div>
+
+    </div>
+
+
+</footer>

@@ -1,0 +1,13 @@
+{{/*returns a contact object from the contacts array in site.params*/}}
+{{$context := .context}}
+{{$type := .type}}
+
+{{$contact :=""}}
+
+{{range $context.Site.Params.contacts}}
+{{if eq .type $type}}
+{{ $contact = . }}
+{{end}}
+{{end}}
+
+{{ return $contact }}

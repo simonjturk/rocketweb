@@ -1,0 +1,32 @@
+{{/*
+This is used to determine the widgets bundles(leaf) for leasf bundles (index.md)
+Once it has the list of reources/widgets, it hands over the widgets-display partial
+to iterate and display the widgets.
+
+NOTE ON HOME PAGE. home page widgets are kept in the home folder so we will test for IsHome
+nd if so change the $dir to point to /home.
+
+TODO: should probably make the /home configurable in sit.config
+*/}}
+
+{{$context := .}}
+
+{{$dir := ""}}
+
+{{ if .Page.IsHome}}
+{{$dir = "/home"}}
+{{else}}
+{{$dir = .Page.File.Dir}}
+
+{{/*remove trailing / */}}
+{{$dir = replace $dir "/" "" }}
+
+{{/*add leading / */}}
+{{$dir = print "/" $dir }}
+
+{{end}}
+
+{{$page := $context.Site.GetPage $dir}}
+{{$resources := $page.Resources.Match "widgets/*/*.md"}}
+
+{{ return $resources }}

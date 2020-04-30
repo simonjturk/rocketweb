@@ -6,7 +6,7 @@ const AssetsPlugin = require("assets-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, "src", "index.js")
+    main: path.join(__dirname, "src", "js/index.js")
   },
 
   output: {
@@ -15,29 +15,29 @@ module.exports = {
 
   module: {
     rules: [{
-        test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader?name=/[hash].[ext]"
-      },
+      test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
+      loader: "file-loader?name=/[hash].[ext]"
+    },
 
-      {
-        test: /\.json$/,
-        loader: "json-loader"
-      },
+    {
+      test: /\.json$/,
+      loader: "json-loader"
+    },
 
-      {
-        loader: "babel-loader",
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        query: {
-          cacheDirectory: true
-        }
-      },
-
-      {
-        test: /\.(sa|sc|c)ss$/,
-        exclude: /node_modules/,
-        use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+    {
+      loader: "babel-loader",
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      query: {
+        cacheDirectory: true
       }
+    },
+
+    {
+      test: /\.(sa|sc|c)ss$/,
+      exclude: /node_modules/,
+      use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader"]
+    }
     ]
   },
 

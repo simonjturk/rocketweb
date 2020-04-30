@@ -1,0 +1,5 @@
+{{$type := "email" }}
+{{$contact := partial "functions/get_contact" (dict "context" . "type" $type)}}
+
+{{partial "contact-link" (dict "context" . "type" $type "value" $contact.value)}}
+{{/*$contact.value*/}}

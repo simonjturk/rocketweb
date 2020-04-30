@@ -1,0 +1,4 @@
+{{- $type := .Get "type" -}}
+{{- $context := .Get "context" -}}
+
+{{ partial "functions/get_contact" (dict "context" $context "type" $type)}}

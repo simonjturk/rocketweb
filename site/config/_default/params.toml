@@ -1,0 +1,56 @@
+
+businessName = "RockitWeb"
+############################
+## Contact details
+
+############################
+
+# Enter contact details (optional). To hide a field, clear it to "".
+contacts = [
+ 
+  {type="phone", value="888 888 88 88", contactPage=true, icon = "phone", icon_pack = "fontawesome", name = "Phone", link = "", message="Feel like a chat? Call us on"},
+  {type="address", message="", value={street = "223 Marys Hope Rd", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"},contactPage=false, icon = "facebook-f", icon_pack = "fontawesome", name = "DM Me", link = ""    },
+  {type="facebook", value="info@rockitweb.com.au", contactPage=false,icon = "facebook", icon_pack = "fontawesome", name = "Facebook", link = "", message="Reachout on messenger"},
+  {type="skype", value="TODO", icon = "skype", contactPage=false, icon_pack = "fontawesome", name = "Skype", link = "", message="Chat to us on skype"},
+  {type="zoom", value="TODO", icon = "video",  contactPage=false,icon_pack = "fontawesome", name = "Zoom", link = "", message="Prefer Zoom?, go for it"},
+  {type="email", value="info@rockitweb.com.au", contactPage=true,icon = "envelope", icon_pack = "fontawesome", name = "email", link = "", message="We love getting emails!"}
+]
+email = "info@rocketweb.com.au"
+phone = "+61 123456"
+abn = "95763165026"
+# Address
+# For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
+address = {street = "223 Marys Hope Rd", city = "Hobart", region = "TAS", postcode = "7011", country = "Australia", country_code = "AU"}
+
+# Geographic coordinates
+# To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+coordinates = {latitude = "-42.815193", longitude = "147.239611"}
+
+# Directions for visitors to locate you.
+directions = ""
+
+# Office hours
+# A list of your office hours. To remove, set to an empty list `[]`.
+office_hours = ["Monday 10:00 to 13:00", "Wednesday 09:00 to 10:00"]
+
+# Enter an optional link for booking appointments (e.g. calendly.com).
+appointment_url = "https://calendly.com"
+
+# Social links
+#   Set to `[]` to disable, or comment out unwanted lines with a hash `#`.
+social_links = [
+  {icon = "facebook", icon_pack = "fontawesome", name = "DM Me", link = ""},
+  {icon = "twitter", icon_pack = "fontawesome", name = "DM Me", link = ""},
+  {icon = "linkedin-in", icon_pack = "fontawesome", name = "Chat on Keybase", link = ""},
+  {icon = "instagram", icon_pack = "fontawesome", name = "Discuss on Forum", link = ""}
+  ]
+
+############################
+## Social
+############################
+
+# Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
+sharing_image = ""
+
+# Twitter username (without @). Used when a visitor shares your site on Twitter.
+twitter = ""

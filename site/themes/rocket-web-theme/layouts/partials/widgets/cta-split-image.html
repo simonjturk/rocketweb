@@ -1,0 +1,39 @@
+<div class="flex">
+    <div class="hidden lg:block w-3/6 bg-orange-200 flex content-center">
+        {{ $page := . }}
+
+
+
+        <div class="flex items-center w-full">
+
+            <div class="flex-1 text-center  px-4 py-2 m-2">
+                <div class="w-3/6 mx-auto">
+                    {{ $image_path := printf "content/%simages/%s" .Page.Dir $page.Params.image}}
+                    {{partial "svg.html" (dict "context" . "path" $image_path)}}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="lg:w-3/6 bg-orange-500 flex items-center text-center">
+        <div class="text-start  px-8 py-2 m-2">
+            <div class="w-16 text-red-300">{{partial "zondico.html" "heart"}}</div>
+
+            <h1 class="uppercase text-6xl text-white font-bold leading-none tracking-wide mb-2">
+
+                {{.Params.heading}}
+            </h1>
+            <h2 class="uppercase sm:text-2xl text-gray-200 text-secondary tracking-widest mb-6">
+                {{.Params.sub_heading}}
+            </h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                {{.Params.paragraph | markdownify}}
+            </p>
+            <div class="bg-white py-3 px-6 uppercase text-lg font-bold
+                        text-orange-600 rounded-full text-center w-full sm:w-2/6">
+                <a href={{.Params.button.link}} class="">{{.Params.button.text}}</a>
+            </div>
+        </div>
+    </div>
+</div>
