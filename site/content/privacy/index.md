@@ -3,6 +3,10 @@ undefined
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 6a3b8a6... RockitCMS - Fri, 01 May 2020 05:56:52 GMT
 ## Privacy Policy (test)test7
 {{< param businessName >}} understands and respects the importance of your privacy. It is important that you read and understand this Privacy Policy. It sets out how we handle your personal information and explains the measures we have taken to abide by the Privacy Act 1988 (Cth) (Privacy Act). It also details how we collect, hold, use and disclose your personal information.
 
