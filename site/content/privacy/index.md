@@ -1,7 +1,7 @@
 ---
 title: Privacy
 headless: false
-description: RocketWeb is based in Hobart, Tasmania and we take your privacy very seriously
+description: RockitWeb is based in Hobart, Tasmania and we take your privacy very seriously
 
 ---
 

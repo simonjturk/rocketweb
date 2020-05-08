@@ -12,7 +12,7 @@
 
 
 h2 {
-  @apply  uppercase text-2xl text-orange-500  tracking-widest mb-6
+  @apply  uppercase text-4xl text-orange-500  tracking-widest mb-6
 }
 
 .has-error input{

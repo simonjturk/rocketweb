@@ -2,10 +2,10 @@
 title: features
 headless: true
 widget: features
-sort: 30
+sort: 40
 
-heading: Better Solutions for better websites
-subHeading: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+heading: Features
+subHeading: Better Solutions for better websites
 
 
 features:
@@ -18,7 +18,8 @@ features:
 - name: SEO Optimised
   icon: search
   text: There's no point having the world's best website if nobody can find it.  All our sites are built with SEO in mind, giving you the best chance to be noticed
-- name: Features Galore
-  icon: tuning
-  text: RockitWeb have a massive tool chest of components to make your site look and behave brilliantly.  Want something super special, no worries we are coders, we can custom build it for you. 
+- name: Secure
+  icon: lock-closed
+  text: We take security very seriously.  From infrustructure to code all our projects are developed with a security first approach.  
+
 ---

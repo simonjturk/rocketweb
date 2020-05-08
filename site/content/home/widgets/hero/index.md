@@ -5,10 +5,10 @@ widget: hero
 sort: 00
 hero:
   button:
-    link: "https : //google.com"
-    text: Learn more
+    link: "/contact"
+    text: Start building
   heading: Web done right
-  paragraph: Some things are worth waiting for your website isn't one of them.
+  paragraph: Work with RockitWeb, and build your business while we build your site.
   sub_heading: Fast.Secure.Responsive.Awesome
-  image: outerspace.svg
+  image: productiteration.svg
 ---

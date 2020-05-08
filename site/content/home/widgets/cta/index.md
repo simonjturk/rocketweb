@@ -2,7 +2,7 @@
 headless: true
 widget: cta-split-image
 sort: 10
-
+hidden: true
 button:
   link: "https : //google.com"
   text: Learn More

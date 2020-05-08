@@ -3,12 +3,16 @@
 
 {{ $widgets := (partial "functions/get_widgets" (dict "scope" $scope "type" $type)) }}
 
-{{range $i,$p := sort ($widgets) "Params.sort" "asc" }}
+    {{$filteredWidgets := where $widgets "Params.hidden" "=" nil }}
+
+{{range $i,$p := sort ($filteredWidgets) "Params.sort" "asc" }}
+
+ 
 
     {{$even := (modBool $i 2)}}
     {{$partial := printf "%s%s%s" "widgets/" .Params.widget ".html"}}
     {{if isset .Params "widget"}}
-        <div class=" {{if (not $even)}} bg-white {{end}}" {{if gt $i 0}} data-aos="zoom-in" {{end}}>
+        <div class="py-10 {{if (not $even)}} bg-white {{end}}" {{if gt $i 1}} data-aos="zoom-in" {{end}}>
         {{partial $partial .}}
         </div>
     {{end}}

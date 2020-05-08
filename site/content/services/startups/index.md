@@ -1,12 +1,12 @@
 ---
-title: SEO
+title: Solutions for Startups
 date: 2019-07-12
 
 icon: 
   name: search
   pack: zondicons
 
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+summary: 
 
 menu:
   main:

@@ -15,7 +15,7 @@ contacts = [
   {type="zoom", value="TODO", icon = "video",  contactPage=false,icon_pack = "fontawesome", name = "Zoom", link = "", message="Prefer Zoom?, go for it"},
   {type="email", value="info@rockitweb.com.au", contactPage=true,icon = "envelope", icon_pack = "fontawesome", name = "email", link = "", message="We love getting emails!"}
 ]
-email = "info@rocketweb.com.au"
+email = "info@rockitweb.com.au"
 phone = "+61 123456"
 abn = "95763165026"
 # Address
