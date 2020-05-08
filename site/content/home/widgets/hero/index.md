@@ -10,5 +10,5 @@ hero:
   heading: Web done right
   paragraph: Work with RockitWeb, and build your business while we build your site.
   sub_heading: Fast.Secure.Responsive.Awesome
-  image: productiteration.svg
+  image: process.svg
 ---
