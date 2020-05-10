@@ -5,7 +5,7 @@
 }
 
 .markdown {
-  @apply text-gray-900 leading-normal break-words;
+  @apply pt-8 text-gray-600 leading-normal break-words;
 }
 
 .markdown > * + * {
@@ -33,15 +33,15 @@
 }
 
 .markdown h1 {
-  @apply leading-tight text-4xl font-semibold mb-4 mt-6 pb-2 text-center;
+  @apply leading-tight text-4xl font-semibold mb-4 mt-6 pb-2;
 }
 
 .markdown h2 {
-  @apply leading-tight text-2xl font-semibold mb-4 mt-6 pb-2 text-center;
+  @apply leading-tight text-4xl font-semibold mb-4 mt-6 pb-2;
 }
 
 .markdown h3 {
-  @apply leading-snug text-lg font-semibold mb-4 mt-6;
+  @apply text-blue-900 leading-snug text-lg font-semibold mb-4 mt-6;
 }
 
 .markdown h4 {
@@ -57,7 +57,7 @@
 }
 
 .markdown blockquote {
-  @apply text-base border-l-4 border-gray-300 pl-4 pr-4 text-gray-600;
+  @apply py-2 text-base border-l-4 border-orange-500 bg-gray-100 pl-4 pr-4 text-gray-600;
 }
 
 .markdown code {
