@@ -25,14 +25,17 @@
     </div>
 
     <div class="w-5/12 hidden md:block ">
-
+       
+{{if ne $imagePath ""}}
        
 
         <div class="w-3/5">
-         
-            {{partial "svg.html" (dict "context" . "path" $imagePath)}}
-        </div>
+          
+           {{partial "image.html" .context}}
 
+           
+        </div>
+{{end}}
 
     </div>
 </section>

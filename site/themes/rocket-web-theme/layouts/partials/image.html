@@ -1,0 +1,13 @@
+{{ $image_path := printf "content/%simages/%s" .Page.Dir .Params.image}}
+
+{{ $img := (partial "functions/get_image" (dict "scope" .Parent "image" .Params.image)) }}
+
+{{if $img}}
+    {{if eq $img.MediaType.SubType "svg"}}
+        {{partial "svg.html" (dict "context" . "path" $image_path)}}
+    {{else}}
+
+        <img style="max-width: 100%; width: auto; height: auto;" src="{{ $img.RelPermalink }}" >
+        
+    {{end}}
+{{end}}

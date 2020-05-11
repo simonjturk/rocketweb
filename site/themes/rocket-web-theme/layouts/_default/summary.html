@@ -6,8 +6,10 @@
  {{ $widgets := (partial "functions/get_widgets" (dict "scope" . "type" $widget )) }}
 
  {{/*should only be one returned TODO: handle if none returned*/}}
- {{ range $widgets }} 
-    {{ $imagePath := printf "content/%simages/%s" .Page.Dir .Params.image}}
-
-    {{ partial "card-horizontal" (dict "heading" .Params.heading "subHeading" .Params.subHeading "paragraph" .Params.paragraph "imagePath" $imagePath) }}
+ {{ range $widgets }}
+ {{$imagePath := ""}} 
+ {{if .Params.image}}
+    {{ $imagePath = printf "content/%simages/%s" .Page.Dir .Params.image}}
+{{end}}
+    {{ partial "card-horizontal" (dict "heading" .Params.heading "subHeading" .Params.subHeading "paragraph" .Params.paragraph "imagePath" $imagePath "context" .Page) }}
  {{ end }}

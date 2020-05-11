@@ -1,0 +1,6 @@
+{{$scope := .scope}}
+{{$image := .image}}
+
+{{ $img := $scope.Resources.GetMatch ( printf "**/**/%s" $image)}}
+
+{{ return $img}}

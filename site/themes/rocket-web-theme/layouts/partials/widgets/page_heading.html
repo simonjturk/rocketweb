@@ -2,7 +2,19 @@
 {{$subHeading := .Params.subHeading}}
 {{$paragraph := .Params.paragraph}}
 
-<section class="flex flex-col lg:flex-row jusitfy-between items-center  bg-gray-100 py-4">
+{{ $img := (partial "functions/get_image" (dict "scope" .Parent "image" .Params.image)) }}
+
+
+
+{{ $style :="" }}
+{{ if .Params.imageAsBackground}}
+    {{ $style =print "  background-repeat: no-repeat; background-image: url( " $img.RelPermalink ")"}}
+{{end}}
+
+
+<section style= "{{$style | safeCSS }}" class="flex flex-col lg:flex-row jusitfy-between items-center  bg-gray-100 py-4">
+
+  
     <div class="w-full px-4 flex flex-col  lg:w-7/12  lg:items-end ">
         <div class="flex flex-col items-center text-center ">
 
@@ -19,17 +31,18 @@
         </div>
 
     </div>
+ 
 
     <div class="w-5/12  hidden lg:block">
 
-        {{$headlessbundle := .Site.GetPage "pageHeading"}}
-        {{ $img := $headlessbundle.Resources.GetMatch (printf "%s%s" "images/" .Params.hero.image) }}
-
+       
         <div class="w-3/5">
-            {{ $image_path := printf "content/%simages/%s" .Page.Dir .Params.image}}
-            {{partial "svg.html" (dict "context" . "path" $image_path)}}
+            {{if eq $style ""}}
+                {{ partial "image.html" . }}
+            {{end}}
         </div>
 
 
     </div>
+    
 </section>
