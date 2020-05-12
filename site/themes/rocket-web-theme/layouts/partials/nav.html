@@ -1,12 +1,29 @@
 <header class="z-40 sticky top-0 lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
-    <div class="flex-1 flex justify-between items-center">
-        <a class="font-bold font-display text-xl text-orange-600 " href="{{ .Site.Home.Permalink }}">
-            {{ .Site.Title }}
+    <div class="flex-1 flex  items-center">
+
+        
+            <svg class="fill-current text-orange-600" width="40" viewBox="0 0 20 20" version="1.1" id="Rocket"
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                <path d="M11.933,13.069c0,0,7.059-5.094,6.276-10.924c-0.017-0.127-0.059-0.213-0.112-0.268c-0.054-0.055-0.137-0.098-0.263-0.115
+	C12.137,0.961,7.16,8.184,7.16,8.184C2.842,7.667,3.156,8.528,1.186,13.26c-0.377,0.902,0.234,1.213,0.904,0.959
+	c0.67-0.252,2.148-0.811,2.148-0.811l2.59,2.648c0,0-0.546,1.514-0.793,2.199c-0.248,0.686,0.055,1.311,0.938,0.926
+	C11.597,17.165,12.439,17.487,11.933,13.069z M12.942,7.153c-0.598-0.613-0.598-1.604,0-2.217c0.598-0.611,1.567-0.611,2.166,0
+	c0.598,0.611,0.598,1.603,0,2.217C14.509,7.764,13.539,7.764,12.942,7.153z" />
+            </svg>
+      
+        <a class="font-bold font-display text-3xl " href="{{ .Site.Home.Permalink }}">
+            <span class="text-blue-900 ">
+                {{.Site.Params.businessNamePart1}}
+            </span>
+             <span class="text-orange-600 -ml-2">
+                {{.Site.Params.businessNamePart2}}
+            </span>
         </a>
     </div>
 
-    <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg"
-            width="20" height="20" viewBox="0 0 20 20">
+    <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900"
+            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
             <title>menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
         </svg>
@@ -18,7 +35,8 @@
 
             <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
                 <!-- Home link -->
-                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 " href="{{.Site.Home.Permalink}}">Home</a></li>
+                <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-orange-400 "
+                        href="{{.Site.Home.Permalink}}">Home</a></li>
 
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
@@ -26,7 +44,8 @@
 
 
                 {{ if .HasChildren }}
-                <li class="group {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}">
+                <li
+                    class="group {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}">
 
                     <div class="flex items-center justify-between">
                         <div>
@@ -37,9 +56,10 @@
                         </div>
 
                         <div class="pl-2 md:hidden text-orange-600">
-                            <svg class="stroke-current text-orange-600 inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512">
-                                <path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
+                            <svg class="stroke-current text-orange-600 inline-block h-4 w-4"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path
+                                    d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" />
                             </svg>
                         </div>
                     </div>
@@ -47,7 +67,8 @@
                     <ul class="absolute hidden group-hover:block bg-white  w-full lg:w-45">
 
                         {{ range .Children }}
-                        <li class="border-dotted border-b  hover:bg-orange-400 py-3 px-3  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                        <li
+                            class="border-dotted border-b  hover:bg-orange-400 py-3 px-3  {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
                             <a href="{{ .URL }}">{{ .Name }}</a>
                         </li>
                         {{ end }}
