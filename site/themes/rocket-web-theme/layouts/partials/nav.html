@@ -42,7 +42,6 @@
                 {{ range .Site.Menus.main }}
 
 
-
                 {{ if .HasChildren }}
                 <li
                     class="group {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} border-orange-400 border-b-2{{end}}">
