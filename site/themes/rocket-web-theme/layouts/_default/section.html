@@ -4,9 +4,9 @@
     {{partial "widgets" (dict "scope" $page "type" "branch") }}
 
     <main class="bg-white">
-        <div class="mt-8 lg:w-4/6 lg:mx-auto">
+        <div class="mt-8 lg:w-9/12 lg:mx-auto">
             {{ .Content }}
-            <div class="flex flex-wrap -mx-2  sm:-mx-2">
+            <div class="flex flex-wrap ">
 
                 {{ range sort (.Paginator.Pages) "Params.menu.main.weight" "asc" }}
                     <div class="w-full sm:my-2 sm:px-2 sm:w-full md:w-full lg:w-2/4">
